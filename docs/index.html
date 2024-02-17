@@ -217,6 +217,8 @@ window.Quarto = {
   <li><a href="#روشهای-همنهشتی" id="toc-روشهای-همنهشتی" class="nav-link" data-scroll-target="#روشهای-همنهشتی">روش‌های همنهشتی</a>
   <ul class="collapse">
   <li><a href="#روش-همنهشتی-ضربی" id="toc-روش-همنهشتی-ضربی" class="nav-link" data-scroll-target="#روش-همنهشتی-ضربی">روش‌ همنهشتی ضربی</a></li>
+  <li><a href="#روش-همنهشتی-جمعی" id="toc-روش-همنهشتی-جمعی" class="nav-link" data-scroll-target="#روش-همنهشتی-جمعی">روش‌ همنهشتی جمعی</a></li>
+  <li><a href="#روش-همنهشتی-مرکب" id="toc-روش-همنهشتی-مرکب" class="nav-link" data-scroll-target="#روش-همنهشتی-مرکب">روش‌ همنهشتی مرکب</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -382,6 +384,30 @@ x_0 = 2152 \quad \longrightarrow\quad x_0^2 = 04631104 \quad\longrightarrow \qua
 <pre><code>[1] 0.2857143</code></pre>
 </div>
 </div>
+</section>
+<section id="روش-همنهشتی-جمعی" class="level3">
+<h3 class="anchored" data-anchor-id="روش-همنهشتی-جمعی">روش‌ همنهشتی جمعی</h3>
+<p>در این روش دنباله اعداد تصادفی از رابطه <span class="math inline">\(x_n \overset{m}{\equiv} x_{n-1} + x_{n-2}\)</span> بدست می‌آیند. در روش فوق باید دو مقدار اولیه <span class="math inline">\(x_0\)</span> و <span class="math inline">\(x_1\)</span> از قبل مشخص شوند.</p>
+<p><span class="math display">\[
+\begin{align}
+&amp; x_0 = 12, \quad x_1 = 3, \quad m =7\\
+&amp; x_2 \overset{7}{\equiv} 12 + 3 \Rightarrow x_2 = 1 \\
+&amp; \frac{x_2}{7} = \frac{1}{7} = 0.1428571
+\end{align}
+\]</span></p>
+<hr>
+<p><strong>تمرین 3:</strong></p>
+<p>به وسیله نرم افزار <code>R</code> برنامه‌ای بنویسید که <code>n</code> عدد تصادفی از بازه <code>(0,1)</code> بر اساس روش همنهشتی جمعی تولید کند.</p>
+<hr>
+</section>
+<section id="روش-همنهشتی-مرکب" class="level3">
+<h3 class="anchored" data-anchor-id="روش-همنهشتی-مرکب">روش‌ همنهشتی مرکب</h3>
+<p>در روش همنهشتی مرکب که ترکیبی از حالات ضربی و جمعی است، دنباله اعداد تصادفی از رابطه همنهشتی <span class="math inline">\(x_n \overset{m}{\equiv} ax_{n-1} + x_{n-2}\)</span> بدست می‌آیند.</p>
+<p><strong>نکته:</strong></p>
+<p>در روش‌های همنهشتی چون هر یک از اعداد <span class="math inline">\(x_n\)</span> یکی از مقادیر صحیح صفر تا <span class="math inline">\(m-1\)</span> را اختیار می‌کند، لذا بعد از اینکه تعداد متناهی (حداکثر <span class="math inline">\(m\)</span> ) مقدار تولید شود، یک مقدار بایستی تکرار شود و به مجرد پیش آمدن این امر تکرار تمام دنباله‌ها شروع می‌شود؛ لذا باید مؤلفه‌های <span class="math inline">\(a\)</span> و <span class="math inline">\(m\)</span> را طوری انتخاب کنیم که از رخ دادن چنین امری جلوگیری شود.</p>
+<hr>
+<p><strong>تمرین 4:</strong></p>
+<p>به وسیله نرم افزار <code>R</code> برنامه‌ای بنویسید که <code>n</code> عدد تصادفی از بازه <code>(0,1)</code> بر اساس روش همنهشتی مرکب تولید کند.</p>
 
 
 </section>
