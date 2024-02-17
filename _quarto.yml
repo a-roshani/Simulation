@@ -13,6 +13,7 @@ book:
     - references.qmd
   site-url: https://a-roshani.ir 
   search: true
+  cover-image: cover1.jpg
   #downloads: [pdf, epub]
   #sharing: [twitter, facebook]
 
