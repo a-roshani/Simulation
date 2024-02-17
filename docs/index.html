@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">احتمال و متغیرهای تصادفی</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">فصل اول: تولید اعداد تصادفی</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -109,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">احتمال و متغیرهای تصادفی</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">فصل اول: تولید اعداد تصادفی</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -138,9 +138,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">فهرست مطالب</h2>
    
   <ul>
-  <li><a href="#احتمال-و-متغیرهای-تصادفی" id="toc-احتمال-و-متغیرهای-تصادفی" class="nav-link active" data-scroll-target="#احتمال-و-متغیرهای-تصادفی">احتمال و متغیرهای تصادفی</a>
+  <li><a href="#فصل-اول-تولید-اعداد-تصادفی" id="toc-فصل-اول-تولید-اعداد-تصادفی" class="nav-link active" data-scroll-target="#فصل-اول-تولید-اعداد-تصادفی">فصل اول: تولید اعداد تصادفی</a>
   <ul class="collapse">
-  <li><a href="#احتمال" id="toc-احتمال" class="nav-link" data-scroll-target="#احتمال">احتمال</a></li>
+  <li><a href="#مقدمه" id="toc-مقدمه" class="nav-link" data-scroll-target="#مقدمه">مقدمه</a></li>
+  <li><a href="#شبیهسازی-در-آمار" id="toc-شبیهسازی-در-آمار" class="nav-link" data-scroll-target="#شبیهسازی-در-آمار">شبیه‌سازی در آمار</a>
+  <ul class="collapse">
+  <li><a href="#اعداد-تصادفی-و-شبهتصادفی" id="toc-اعداد-تصادفی-و-شبهتصادفی" class="nav-link" data-scroll-target="#اعداد-تصادفی-و-شبهتصادفی">اعداد تصادفی و شبه‌تصادفی</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -179,15 +183,35 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="احتمال-و-متغیرهای-تصادفی" class="level1">
-<h1>احتمال و متغیرهای تصادفی</h1>
-<section id="احتمال" class="level2">
-<h2 class="anchored" data-anchor-id="احتمال">احتمال</h2>
-<p><strong>مثال 1:</strong> احتمال اینکه .</p>
-<hr>
-<p><strong>حل:</strong> برای حل</p>
+<section id="فصل-اول-تولید-اعداد-تصادفی" class="level1">
+<h1>فصل اول: تولید اعداد تصادفی</h1>
+<section id="مقدمه" class="level2">
+<h2 class="anchored" data-anchor-id="مقدمه">مقدمه</h2>
+<p>شبیه سازی یک ابزار قدرتمند برای طراحی و تحلیل سیستم‌ها یا فرآیندهای پیچیده است که با ارائه حالت یا نمونه‌های مشابه با نمونه اصلی، به استفاده کنندگان از آن، امکان انجام آزمایش با سیستم‌هایی را می‌دهد که در عمل غیر ممکن یا پر هزینه هستند.</p>
+<p><strong>مثال:</strong></p>
+<ul>
+<li><p>آموزش خلبانی</p></li>
+<li><p>مانور زلزله</p></li>
+<li><p>سینما چندبُعدی</p></li>
+</ul>
+</section>
+<section id="شبیهسازی-در-آمار" class="level2">
+<h2 class="anchored" data-anchor-id="شبیهسازی-در-آمار">شبیه‌سازی در آمار</h2>
+<p>از کاربردهای شبیه‌سازی در آمار می‌توان موارد زیر را نام برد:</p>
+<ul>
+<li><p>تولید اعداد تصادفی و شبه‌تصادفی</p></li>
+<li><p>تولید داده‌های تصادفی از توزیع‌های گسسته یا پیوسته</p></li>
+<li><p>محاسبه (تقریب) انتگرال‌ها و احتمال‌های پیچیده</p></li>
+<li><p>تقریب امید ریاضی توابعی از متغیرهای تصادفی</p></li>
+<li><p>تقریب توان یک آزمون</p></li>
+</ul>
+<section id="اعداد-تصادفی-و-شبهتصادفی" class="level3">
+<h3 class="anchored" data-anchor-id="اعداد-تصادفی-و-شبهتصادفی">اعداد تصادفی و شبه‌تصادفی</h3>
+<p><strong>اعداد تصادفی (Random Numbers):</strong> اعدادی هستند که بر مبنای یک سری جریانات یا بر اساس یک منبع خارجی بدون هیچ رابطه خاصی تولید می‌شوند، بنابراین این اعداد قابلیت باز تولید را ندارند، یعنی اگر مجموعه‌ای از اعداد از اعداد تصادفی تولید شوند دوباره <span style="color: red">نمی‌توان</span> دقیقاً همان اعداد را تولید کرد.</p>
+<p><strong>اعداد شبه‌تصادفی (PseudoRandom Numbers):</strong> اعدادی هستند که بر مبنای یک رابطه ریاضی به دست می‌آیند. بنابراین قابلیت بازتولید دارند، یعنی اگر مجموعه‌ای از اعداد از اعداد تصادفی تولید شوند دوباره <span style="color: red">می‌توان</span> دقیقاً همان اعداد را تولید کرد.</p>
 
 
+</section>
 </section>
 </section>
 

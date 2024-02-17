@@ -7,7 +7,7 @@ book:
   author: "امین روشنی"
   date: "2024-02-17"
   chapters:
-    - ch01.qmd
+    - index.qmd
     - intro.qmd
     - summary.qmd
     - references.qmd
