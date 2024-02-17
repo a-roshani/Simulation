@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -275,6 +309,29 @@ window.Quarto = {
 <li><p><span class="math inline">\(m\)</span> رقم میانی عدد حاصل شده را به عنوان عدد تصادفی تولید شده در نظر می‌گیریم.</p></li>
 <li><p>برای تولید دنباله‌ای از اعداد تصادفی گام‌های 2 و 3 را تکرار می‌کنیم.</p></li>
 </ol>
+<p><strong>نکته:</strong> برای تولید اعداد تصادفی در بازه <span class="math inline">\((0,1)\)</span> با استفاده از روش توان دوم ارقام میانی کافی است در پایان کار، دنباله اعداد <span class="math inline">\(m\)</span> رقمی بدست آمده را بر <span class="math inline">\(10^m\)</span> تقسیم کرد.</p>
+<hr>
+<p><strong>مثال:</strong></p>
+<p>الف) با استفاده از روش توان دوم ارقام میانی یک عدد 4 رقمی تولید کنید.</p>
+<p>ب) با استفاده از نکته فوق عددی تصادفی در بازه <span class="math inline">\((0,1)\)</span> تولید کنید.<span class="math display">\[
+x_0 = 2152 \quad \longrightarrow\quad x_0^2 = 04631104 \quad\longrightarrow \quad x_1 = 6311
+\]</span></p>
+<p>برای تولید اعداد دیگر کافیست که عدد 6311 را به عنوان مقدار اولیه الگوریتم در نظر بگیریم.</p>
+<hr>
+<p><strong>مثال:</strong></p>
+<p>مثال قبل را با استفاده از نرم افزار <code>R</code> حل کنید.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x0 <span class="ot">&lt;-</span> <span class="dv">2152</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> x0<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">nchar</span>(x1)<span class="sc">%%</span><span class="dv">2</span><span class="sc">==</span><span class="dv">1</span>){t <span class="ot">&lt;-</span> <span class="fu">substr</span>(x1,<span class="dv">2</span>,<span class="dv">5</span>)}<span class="cf">else</span>{t <span class="ot">&lt;-</span> <span class="fu">substr</span>(x1,<span class="dv">3</span>,<span class="dv">6</span>)}</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6311</code></pre>
+</div>
+</div>
+<hr>
+<p><strong>تمرین 2:</strong></p>
+<p>به وسیله نرم افزار <code>R</code> تابعی را بنویسید که براساس روش توان دوم ارقام میانی <code>n</code> عدد تصادفی چهار رقمی تولید کند.</p>
 
 
 </section>
