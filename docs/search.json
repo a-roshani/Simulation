@@ -22,11 +22,11 @@
   {
     "objectID": "intro.html",
     "href": "intro.html",
-    "title": "مقدمه",
+    "title": "فصل دوم: تولید داده از توزیع‌های آماری",
     "section": "",
-    "text": "هدف این کتاب آموزش زبان برنامه‌نویسی R است.\nبرای مطالعه مطالب بیشتر به Knuth (1984) مراجعه کنید.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "شبیه سازی یک ابزار قدرتمند برای طراحی و تحلیل سیستم‌ها یا فرآیندهای پیچیده است که با ارائه حالت یا نمونه‌های مشابه با نمونه اصلی، به استفاده کنندگان از آن، امکان انجام آزمایش با سیستم‌هایی را می‌دهد که در عمل غیر ممکن یا پر هزینه هستند.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>مقدمه</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>فصل دوم: تولید داده از توزیع‌های آماری</span>"
     ]
   },
   {
