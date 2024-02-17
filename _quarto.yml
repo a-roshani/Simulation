@@ -1,0 +1,38 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "روش‌های عددی و شبیه‌سازی"
+  author: "امین روشنی"
+  date: "2024-02-17"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+  site-url: https://a-roshani.ir 
+  search: true
+  #downloads: [pdf, epub]
+  #sharing: [twitter, facebook]
+
+bibliography: references.bib
+
+format:
+  html:
+    page-layout: full
+    theme: 
+      - cosmo
+      - source.scss
+  #pdf:
+  #  documentclass: scrreprt
+
+#filters:
+#  - webr
+number-sections: false
+mainfont: Vazirmatn
+language: FA_values.yml
+dir: rtl
+
+editor: visual
+

@@ -1,0 +1,52 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "روش‌های عددی و شبیه‌سازی",
+    "section": "",
+    "text": "احتمال و متغیرهای تصادفی",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>احتمال و متغیرهای تصادفی</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#احتمال",
+    "href": "index.html#احتمال",
+    "title": "روش‌های عددی و شبیه‌سازی",
+    "section": "احتمال",
+    "text": "احتمال\nمثال 1: احتمال اینکه .\n\nحل: برای حل",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>احتمال و متغیرهای تصادفی</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "مقدمه",
+    "section": "",
+    "text": "هدف این کتاب آموزش زبان برنامه‌نویسی R است.\nبرای مطالعه مطالب بیشتر به Knuth (1984) مراجعه کنید.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>مقدمه</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "خلاصه",
+    "section": "",
+    "text": "این خلاصه‌ای از کتاب است.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>خلاصه</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "منابع",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "منابع"
+    ]
+  }
+]
