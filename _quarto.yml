@@ -26,13 +26,18 @@ format:
       - source.scss
   #pdf:
   #  documentclass: scrreprt
-
+  
+website:
+  sidebar:
+    style: "docked"
+    
 #filters:
 #  - webr
 number-sections: false
 mainfont: Vazirmatn
 language: FA_values.yml
 dir: rtl
+toc: false
 
 editor: visual
 

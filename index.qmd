@@ -1,4 +1,4 @@
-![](cover1.png){fig-align="center" width="635"}
+![](cover1.png){fig-align="right" width="635"}
 
 # فصل اول: تولید اعداد تصادفی
 
