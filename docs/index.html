@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -145,7 +174,9 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#اعداد-تصادفی-و-شبهتصادفی" id="toc-اعداد-تصادفی-و-شبهتصادفی" class="nav-link" data-scroll-target="#اعداد-تصادفی-و-شبهتصادفی">اعداد تصادفی و شبه‌تصادفی</a></li>
   <li><a href="#روشهای-سنتی-تولید-اعداد-تصادفی" id="toc-روشهای-سنتی-تولید-اعداد-تصادفی" class="nav-link" data-scroll-target="#روشهای-سنتی-تولید-اعداد-تصادفی">روش‌های سنتی تولید اعداد تصادفی</a></li>
+  <li><a href="#روشهای-ابداعی" id="toc-روشهای-ابداعی" class="nav-link" data-scroll-target="#روشهای-ابداعی">روش‌های ابداعی</a></li>
   </ul></li>
+  <li><a href="#روش-توان-دوم-ارقام-میانی" id="toc-روش-توان-دوم-ارقام-میانی" class="nav-link" data-scroll-target="#روش-توان-دوم-ارقام-میانی">روش توان دوم ارقام میانی</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -219,9 +250,33 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="circle.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-
-
 </section>
+<section id="روشهای-ابداعی" class="level3">
+<h3 class="anchored" data-anchor-id="روشهای-ابداعی">روش‌های ابداعی</h3>
+<ul>
+<li><p>پرتاب یک سکه</p></li>
+<li><p>باز کردن صفحه‌ای از یک کتاب به صورت تصادفی</p></li>
+<li><p>انتخاب از بین چند گوی</p></li>
+</ul>
+<hr>
+<p><strong>تمرین 1:</strong></p>
+<p>الف) روشی تصادفی برای تولید عدد از بازه (0,100) پیشنهاد دهید.</p>
+<p>ب) آیا می توان روش ابداعی شما را برای تولید داده از هر بازه‌ای مورد استفاد قرار داد؟ مثال بزنید.</p>
+<p>ج) آیا می توان از روش ابداعی شما برای تولید داده از نوع کیفی (میزان تحصیلات یا گروه خونی) نیز استفاده کرد؟</p>
+<hr>
+</section>
+</section>
+<section id="روش-توان-دوم-ارقام-میانی" class="level2">
+<h2 class="anchored" data-anchor-id="روش-توان-دوم-ارقام-میانی">روش توان دوم ارقام میانی</h2>
+<p>این روش یک روش ریاضی برای تولید اعداد تصادفی <span class="math inline">\(m\)</span> رقمی است. در این روش که به وسیله فون نیومن و متروپولیس (1946) پیشنهاد شده، مراحل زیر را انجام می‌دهیم:</p>
+<ol type="1">
+<li><p>به دلخواه عددی <span class="math inline">\(m\)</span> رقمی را در نظر می‌گیریم</p></li>
+<li><p>این عدد را به توان دو می‌رسانیم و در صورت لزوم عدد صفر را به سمت چپ عدد بدست آمده اضافه می‌کنیم.</p></li>
+<li><p><span class="math inline">\(m\)</span> رقم میانی عدد حاصل شده را به عنوان عدد تصادفی تولید شده در نظر می‌گیریم.</p></li>
+<li><p>برای تولید دنباله‌ای از اعداد تصادفی گام‌های 2 و 3 را تکرار می‌کنیم.</p></li>
+</ol>
+
+
 </section>
 </section>
 
