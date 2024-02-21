@@ -8,7 +8,7 @@ book:
   date: "2024-02-17"
   chapters:
     - index.qmd
-    - intro.qmd
+    - Ch_2.qmd
     - summary.qmd
     - references.qmd
   site-url: https://a-roshani.ir 
