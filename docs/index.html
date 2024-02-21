@@ -336,8 +336,7 @@ x_0 = 2152 \quad \longrightarrow\quad x_0^2 = 04631104 \quad\longrightarrow \qua
 <p>روش‌های همنهشتی برای تولید اعداد تصادفی شامل سه روش همنهشتی ضربی، همنهشتی مرکب و همنهشتی جمعی می باشد.</p>
 <section id="روش-همنهشتی-ضربی" class="level3">
 <h3 class="anchored" data-anchor-id="روش-همنهشتی-ضربی">روش‌ همنهشتی ضربی</h3>
-<p>در این روش الگوریتم تولید عدد با یک مقدار اولیه (<code>initial value</code>) مانند <span class="math inline">\(x_0\)</span> شروع می‌شود که عدد تغذیه (<code>seed</code>) نامیده می‌شود. سپس مقادیر <span class="math inline">\(x_n (n \geq 1)\)</span> را از رابطه بازگشتی <span class="math inline">\(x_n \overset{m}{\equiv} ax_{n-1}\)</span><br>
-محاسبه می‌کنیم که در آن <span class="math inline">\(a\)</span> و <span class="math inline">\(m\)</span> (پیمانه <code>modulo</code>) اعداد صحیح مثبت هستند. رابطه فوق بدین معنی است که باقیمانده تقسیم <span class="math inline">\(ax_{n-1}\)</span> بر <span class="math inline">\(m\)</span> به عنوان مقدار <span class="math inline">\(x_n\)</span> می‌تواند یکی از مقادیر صحیح صفر تا <span class="math inline">\(m-1\)</span> را اختیار کند، لذا <span class="math inline">\(\frac{x_n}{m}\)</span> یک عدد شبه تصادفی در بازه <span class="math inline">\((0,1)\)</span> است.</p>
+<p>در این روش الگوریتم تولید عدد با یک مقدار اولیه (<code>initial value</code>) مانند <span class="math inline">\(x_0\)</span> شروع می‌شود که عدد تغذیه (<code>seed</code>) نامیده می‌شود. سپس مقادیر <span class="math inline">\(x_n (n \geq 1)\)</span> را از رابطه بازگشتی <span class="math inline">\(x_n \overset{m}{\equiv} ax_{n-1}\)</span> محاسبه می‌کنیم که در آن <span class="math inline">\(a\)</span> و <span class="math inline">\(m\)</span> (پیمانه <code>modulo</code>) اعداد صحیح مثبت هستند. رابطه فوق بدین معنی است که باقیمانده تقسیم <span class="math inline">\(ax_{n-1}\)</span> بر <span class="math inline">\(m\)</span> به عنوان مقدار <span class="math inline">\(x_n\)</span> می‌تواند یکی از مقادیر صحیح صفر تا <span class="math inline">\(m-1\)</span> را اختیار کند، لذا <span class="math inline">\(\frac{x_n}{m}\)</span> یک عدد شبه تصادفی در بازه <span class="math inline">\((0,1)\)</span> است.</p>
 <hr>
 <p><strong>مثال:</strong></p>
 <p>با انتخاب مقادیر دلخواه <span class="math inline">\(x_0, a, m\)</span> دو عدد تصادفی در بازه <span class="math inline">\((0,1)\)</span> تولید کنید.</p>
@@ -362,6 +361,10 @@ x_0 = 2152 \quad \longrightarrow\quad x_0^2 = 04631104 \quad\longrightarrow \qua
 <pre><code>[1] 0.2857143</code></pre>
 </div>
 </div>
+<hr>
+<p><strong>تمرین 3:</strong></p>
+<p>به وسیله نرم افزار <code>R</code> برنامه‌ای بنویسید که <code>n</code> عدد تصادفی از بازه <code>(0,1)</code> بر اساس روش همنهشتی ضربی تولید کند.</p>
+<hr>
 </section>
 <section id="روش-همنهشتی-جمعی" class="level3">
 <h3 class="anchored" data-anchor-id="روش-همنهشتی-جمعی">روش‌ همنهشتی جمعی</h3>
@@ -374,7 +377,7 @@ x_0 = 2152 \quad \longrightarrow\quad x_0^2 = 04631104 \quad\longrightarrow \qua
 \end{align}
 \]</span></p>
 <hr>
-<p><strong>تمرین 3:</strong></p>
+<p><strong>تمرین 4:</strong></p>
 <p>به وسیله نرم افزار <code>R</code> برنامه‌ای بنویسید که <code>n</code> عدد تصادفی از بازه <code>(0,1)</code> بر اساس روش همنهشتی جمعی تولید کند.</p>
 <hr>
 </section>
@@ -384,7 +387,7 @@ x_0 = 2152 \quad \longrightarrow\quad x_0^2 = 04631104 \quad\longrightarrow \qua
 <p><strong>نکته:</strong></p>
 <p>در روش‌های همنهشتی چون هر یک از اعداد <span class="math inline">\(x_n\)</span> یکی از مقادیر صحیح صفر تا <span class="math inline">\(m-1\)</span> را اختیار می‌کند، لذا بعد از اینکه تعداد متناهی (حداکثر <span class="math inline">\(m\)</span> ) مقدار تولید شود، یک مقدار بایستی تکرار شود و به مجرد پیش آمدن این امر تکرار تمام دنباله‌ها شروع می‌شود؛ لذا باید مؤلفه‌های <span class="math inline">\(a\)</span> و <span class="math inline">\(m\)</span> را طوری انتخاب کنیم که از رخ دادن چنین امری جلوگیری شود.</p>
 <hr>
-<p><strong>تمرین 4:</strong></p>
+<p><strong>تمرین 5:</strong></p>
 <p>به وسیله نرم افزار <code>R</code> برنامه‌ای بنویسید که <code>n</code> عدد تصادفی از بازه <code>(0,1)</code> بر اساس روش همنهشتی مرکب تولید کند.</p>
 
 
