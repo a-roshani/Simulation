@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -196,19 +230,209 @@ window.Quarto = {
 </ol>
 <section id="روش-وارون" class="level3">
 <h3 class="anchored" data-anchor-id="روش-وارون">روش وارون</h3>
-<p>متداول‌ترین روش برای شبیه‌سازی از متغیرهای تصادفی روش وارون است. اساس کار این روش استفاده از قضیه تبدیل انتگرالی احتمال<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> (برای تولید متغیرهای تصادفی پیوسته) و عکس آن<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> (برای تولید متغیرهای تصادفی گسسته) می‌باشد.</p>
+<p>متداول‌ترین روش برای شبیه‌سازی از متغیرهای تصادفی روش وارون است. اساس کار این روش استفاده از قضیه تبدیل انتگرالی احتمال<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> و عکس آن<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> می‌باشد.</p>
 <p><span style="color: blue;"><strong>قضیه (عکس تبدیل انتگرالی احتمال):</strong></span> فرض کنید <span class="math inline">\(F_{X}(.)\)</span> یک تابع توزیع تجمعی دلخواه (گسسته یا پیوسته) و <span class="math inline">\(U\)</span> یک متغیر تصادفی با توزیع یکنواخت پیوسته روی بازه <code>(0,1)</code> باشد. اگر <span class="math inline">\(F_X^{-1}(.)\)</span> وارون تعمیم یافته این تابع توزیع باشد که به صورت زیر تعریف می‌شود:</p>
-<p><span class="math display">\[\begin{align*}
-        F^{-1}(u)=\inf\{x|F_{X}(x)\geq u\} = \sup\{x|F_{X}(x)\leq u\}
-\end{align*}\]</span></p>
+<span class="math display">\[\begin{align*}
+        F^{-1}(u)=\min\{x|F_{X}(x)\geq u\} = \max\{x|F_{X}(x)\leq u\}
+\end{align*}\]</span>
 <p>در این صورت متغیر تصادفی <span class="math inline">\(F_X^{-1}(U)\)</span> دارای تابع توزیع <span class="math inline">\(F_{X}(.)\)</span> است، یعنی دو متغیر <span class="math inline">\(F_X^{-1}(U)\)</span> و <span class="math inline">\(X\)</span> هم توزیع هستند.</p>
+<hr>
+<p><span style="color: red;"><strong>نکته:</strong></span> در صورتی که تابع <span class="math inline">\(F\)</span> وارون‌پذیر (اکیداً صعودی و پیوسته) باشد، <span class="math inline">\(F^{-1}(u)\)</span> همان وارون معمولی (چندک) تابع <span class="math inline">\(F\)</span> است.</p>
 <hr>
 <p><span style="color: green;"><strong>نکته:</strong></span>برای سادگی در نوشتار و همچنین مشابه‌ بودن نمادگذاری دو متغیر تصادفی هم توزیع، در ادامه این فصل متغیر تصادفی <span class="math inline">\(F_X^{-1}(U)\)</span> را با نماد <span class="math inline">\(X^{*}\)</span> نشان می‌دهیم. یعنی بر اساس قضیه قبل داریم</p>
 <p><span class="math display">\[
 X^{*} \overset{D}{=} X \quad \Rightarrow \quad F_X^{-1}(U) \sim F_X
 \]</span></p>
-<p>با استفاده از قضیه فوق و با در اختیار داشتن تابع توزیع <span class="math inline">\(F_{X}(x)\)</span> می‌توان مقادیری از متغیر تصادفی <span class="math inline">\(X^{*}\)</span> را شبیه‌سازی کرد و چون این متغیر با متغیر هدف <span class="math inline">\(X\)</span>، هم‌توزیع می‌باشد، می‌توان این مقادیر تولید شده را به عنوان مقادیر تولید شده از متغیر هدف در نظر گرفت.</p>
-<p>مثال‌های زیر شیوه استفاده از قضیه فوق را نشان‌ می‌دهند.</p>
+<p>با استفاده از قضیه فوق و با در اختیار داشتن تابع توزیع <span class="math inline">\(F_{X}(x)\)</span> می‌توان مقادیری از متغیر تصادفی <span class="math inline">\(X^{*}\)</span> را شبیه‌سازی کرد و چون این متغیر با متغیر هدف <span class="math inline">\(X\)</span>، هم‌توزیع می‌باشد، می‌توان این مقادیر تولید شده را به عنوان مقادیر تولید شده از متغیر هدف در نظر گرفت.<br>
+<br>
+<strong>الگوریتم روش تبدیل وارون:</strong> برای تولید یک عدد تصادفی به روش وارون از متغیر تصادفی <span class="math inline">\(X\)</span> با تابع توزیع <span class="math inline">\(F^{-1}_X\)</span> گام‌های زیر را انجام می‌دهیم:</p>
+<ol type="1">
+<li><p>تابع <span class="math inline">\(F_X^{-1}(.)\)</span> را بدست می‌آوریم.</p></li>
+<li><p>یک مقدار تصادفی <span class="math inline">\(u\)</span> را از توزیع <span class="math inline">\(\mathcal{U}(0,1)\)</span> تولید می‌کنیم.</p></li>
+<li><p>مقدار <span class="math inline">\(F_X^{-1}(u)\)</span> را به عنوان عدد تولیدی محاسبه می‌کنیم.</p></li>
+</ol>
+<p>مثال‌های زیر شیوه استفاده از الگوریتم بالا را نشان‌ می‌دهند.</p>
+<p><span style="color: green;"><strong>مثال 1:</strong></span>فرض کنید <span class="math inline">\(X\sim \mathcal{B}in(1,p)\)</span>. به روش وارون یک عدد تصادفی از این توزیع تولید کنید.</p>
+<p><span class="math display">\[\begin{align*}
+        &amp;\mathbb{P}(X=x)=p^{x}(1-p)^{1-x} \quad  ; x=0,1
+        \notag\\[0.5cm]
+
+&amp;\Rightarrow F_{X}(x)= \begin{cases}
+            0 &amp; \quad ; x&lt;0 \\
+            1-p &amp; \quad ; 0\leq x&lt;1 \\
+            1 &amp; \quad ; x\geq 1\\
+        \end{cases}
+    \end{align*}\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="diagram-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p><span class="math display">\[
+\begin{align*}      
+&amp;X^{*}=\min \{x|F_{X}(x)\geq u\}=\begin{cases}          \min \{[0,+\infty)\}=0 &amp; \quad ; 0&lt;u&lt;1-p \\         \min\{[1,+\infty)\}=1 &amp; \quad ; 1-p&lt;u&lt;1 \\      \end{cases}\notag\\
+\Rightarrow \quad &amp;X^{*}= \begin{cases}         0 &amp; \quad ; 0&lt;u&lt;1-p \\          1 &amp; \quad ; 1-p&lt;u&lt;1 \\      \end{cases} \end{align*}
+\]</span></p>
+<p>بنابراین کافی است ابتدا با استفاده از تابع <code>runif</code> یک عدد تصادفی از توزیع یکنواخت روی بازه <span class="math inline">\((0,1)\)</span> تولید کنیم و با جایگذاری در رابطه فوق مقادیر <span class="math inline">\(x^{*}\)</span> را تولید کنیم.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">=</span> <span class="fl">0.5</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>u <span class="ot">=</span> <span class="fu">runif</span>(<span class="dv">1</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ifelse</span>(u <span class="sc">&lt;</span> (<span class="dv">1</span><span class="sc">-</span>p) , <span class="dv">0</span>, <span class="dv">1</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+<p><span style="color: blue;"><strong>تمرین 1:</strong></span> با استفاده از نرم‌افزار <code>R</code> برنامه‌ای بنویسید که از توزیع <span class="math inline">\(\mathcal{B}in(1,p)\)</span> یا همان <span class="math inline">\(\mathcal{B}er(p)\)</span>، <span class="math inline">\(n\)</span> عدد تصادفی تولید کند.</p>
+<p>بیان ساده قضیه قبل به صورت زیر می‌باشد.</p>
+<p>فرض کنید <span class="math inline">\(X\)</span> یک متغیر تصادفی گسسته با تابع جرم احتمال <span class="math inline">\(\mathbb{P}(X=x_{i})=p_{i}\quad i=1,2,\ldots\)</span> باشد. در این صورت با فرض اینکه <span class="math inline">\(u\sim \mathcal{U}(0,1)\)</span> و چون <span class="math inline">\(F_{X}(x_{i})=\mathbb{P}(X\leq x_{i})=\sum_{j=1}^{i}p_{j}\)</span> ، نتیجه می‌شود: <span class="math display">\[\begin{align*}
+    &amp;F_{X}(x)=\begin{cases}
+        0 &amp; \quad ; X&lt;x_{1} \\
+        p_{1} &amp; \quad ; x_{1}\leq X&lt;x_{2} \\
+        p_{1}+p_{2} &amp; \quad ; x_{2}\leq X &lt;x_{3} \\
+        ~~~ \vdots &amp; \quad  ~~~~~~\vdots\\
+        1\\
+    \end{cases}\notag\\&amp;\Rightarrow
+    X^{*}=\begin{cases}
+        x_{1} &amp; \quad ; u&lt;p_{1} \\
+        x_{2} &amp; \quad ; p_{1}\leq u&lt;p_{1}+p_{2} \\
+        ~~\vdots&amp; \quad  ~~~~~~\vdots\\
+        x_{i} &amp; \quad ;\sum_{j=1}^{i-1}p_{j}\leq u&lt;\sum_{j=1}^{i}p_{j}\\
+        ~~\vdots&amp; \quad  ~~~~~~\vdots\\
+    \end{cases}
+\end{align*}\]</span></p>
+<p>طبق قضیه قبل باید نشان دهیم <span class="math inline">\(X^{*}\)</span> دارای توزیع <span class="math inline">\(F_{X}(x)\)</span> است. به عبارت دیگر باید نشان دهیم که <span class="math inline">\(\mathbb{P}(X^{*}=x_{i})=p_{i}\)</span>.</p>
+<p><span class="math display">\[\begin{align*}
+    \mathbb{P}(X^{*}=x_{i})=&amp;\mathbb{P}(\sum_{j=1}^{i-1}p_{j}&lt;u&lt;\sum_{j=1}^{i}p_{j})=\int_{\sum_{j=1}^{i-1}p_{j}}^{\sum_{j=1}^{i}p_{j}}du\notag\\&amp;=\sum_{j=1}^{i}p_{j}-\sum_{j=1}^{i-1}p_{j}=p_{i}
+\end{align*}\]</span></p>
+<p>بنابراین با توجه به مطالب بیان شده، فرآیند بالا را می‌توان در قالب الگوریتم زیر خلاصه کرد.</p>
+<ol type="1">
+<li><p>یک عدد تصادفی از توزیع یکنواخت پیوسته روی بازه <span class="math inline">\((0,1)\)</span> تولید می‌کنیم</p></li>
+<li><p>اگر <span class="math inline">\(u&lt;p_{1}\)</span> آن‌گاه <span class="math inline">\(X^{*}=x_{1}\)</span> و الگوریتم متوقف می‌شود، در غیر اینصورت به گام بعد می‌رویم.</p></li>
+<li><p>اگر <span class="math inline">\(u&lt;p_{1}+p_{2}\)</span> آن‌گاه <span class="math inline">\(X^{*}=x_{2}\)</span> و الگوریتم متوقف می‌شود، در غیر اینصورت به گام بعد می‌رویم.</p></li>
+<li><p>اگر <span class="math inline">\(u&lt;p_{1}+p_{2}+p_{3}\)</span> آن‌گاه <span class="math inline">\(X^{*}=x_{3}\)</span> و الگوریتم متوقف می‌شود، در غیر اینصورت به گام بعد می‌رویم.</p>
+<p>…</p></li>
+</ol>
+<p>به عبارت دیگر در هر مرحله مقدار متغیر <span class="math inline">\(X\)</span> را با پیدا کردن بازه‌ی <span class="math inline">\(\Big(F(x_{i-1}),F(x_{i})\Big)\)</span> که شامل <span class="math inline">\(u\)</span> می‌شود یا به‌طور معادل پیدا کردن <span class="math inline">\(F^{-1}(u)\)</span> به دست می‌آوریم.</p>
+<p><span style="color:green;"><strong>مثال 2:</strong></span>فرض کنید <span class="math inline">\(X\sim \mathcal{D}u(\{1,2,\ldots,n\})\)</span> . با استفاده از روش وارون از این توزیع داده تصادفی تولید کنید.</p>
+<p><span class="math display">\[\begin{align*}
+        &amp;\mathbb{P}(X=j)=\dfrac{1}{n}  \quad ;j=1,2,\ldots,n\\
+        &amp;F_{X}(x_{j})=\mathbb{P}(X\leq x_{j})=\mathbb{P}(X\leq j)=\dfrac{j}{n}\\
+        &amp;\Rightarrow X^{*}=j \quad \mathrm{if} \quad \dfrac{j-1}{n}&lt;u&lt;\dfrac{j}{n}\\
+        &amp;\Rightarrow j-1&lt;nu&lt;j
+    \end{align*}\]</span> پس <span class="math inline">\(X^{*}=j\)</span> خواهد بود اگر داشته باشیم <span class="math inline">\(j-1&lt;nu&lt;j\)</span> یا به عبارتی <span class="math inline">\([nu]=j-1\)</span> پس می‌توان گفت <span class="math display">\[\begin{align*}
+        X^{*}=[nu]+1
+    \end{align*}\]</span> به عنوان مثال اگر <span class="math inline">\(n=5\)</span> باشد و <span class="math inline">\(u=0.3\)</span> داده تصادفی از توزیع <span class="math inline">\(\mathcal{D}u(\{1,2,\ldots,5\})\)</span> برابر است با <span class="math display">\[\begin{align*}
+    X^{*}=[5\times0.3]+1=[1.5]+1=2
+\end{align*}\]</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="dv">5</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>u <span class="ot">=</span> <span class="fu">runif</span>(<span class="dv">1</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">floor</span>(n<span class="sc">*</span>u) <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+<p><span style="color: blue;"><strong>تمرین 2:</strong></span> با استفاده از نرم‌افزار <code>R</code>، برنامه‌ای بنویسید که از الگوریتم فوق <code>n</code> داده تولید کند.</p>
+<p><span style="color: blue;"><strong>تمرین 3:</strong></span> اگر <span class="math inline">\(X\sim \mathcal{D}u\Big(\{3,4,\ldots,N\}\Big)\)</span> باشد، با استفاده از نرم‌افزار <code>R</code>، برنامه‌ای بنویسید که از این توزیع <code>n</code> داده تولید کند.</p>
+<p><span style="color: blue;"><strong>تمرین 4:</strong></span> فرض کنید <span class="math inline">\(X\)</span> یک متغیر تصادفی باشد که مقادیر <span class="math inline">\(x_{1},x_{2},\ldots x_{n}\)</span> را با احتمال‌های <span class="math inline">\(\mathbb{P}(X=x_{i})=p_{i}\)</span> اختیار کند. برنامه‌ای بنویسید که بر اساس روش وارون از این توزیع عدد تصادفی تولید کند.</p>
+<p><span style="color: green;">مثال 3:</span> فرض کنید <span class="math inline">\(X\)</span> یک متغیر تصادفی با تابع جرم احتمال به صورت زیر باشد. الگوریتمی برای تولید داده از این چگالی با استفاده از روش وارون ارائه دهید.</p>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td>4</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td><span class="math inline">\(\{X=j\}\)</span></td>
+</tr>
+<tr class="even">
+<td>0.4</td>
+<td>0.25</td>
+<td>0.15</td>
+<td>0.2</td>
+<td><span class="math inline">\(\mathbb{P}(\{X=j\})\)</span></td>
+</tr>
+</tbody>
+</table>
+<span class="math display">\[\begin{align*}
+        X^{*}&amp;=\begin{cases}
+            x_{1} &amp; \quad ; u&lt;p_{1} \\
+            x_{2} &amp; \quad ; p_{1}&lt;u&lt;p_{1}+p_{2} \\
+            x_{3} &amp; \quad ; p_{1}+p_{2}&lt;u&lt;p_{1}+p_{2}+p_{3} \\
+            x_{4} &amp; \quad ; p_{1}+p_{2}+p_{3}&lt;u&lt;1 \\
+        \end{cases}\\[0.3cm]
+        &amp;=\begin{cases}
+            1 &amp; \quad ; u&lt;0.2 \\
+            2 &amp; \quad ; 0.2&lt;u&lt;0.35 \\
+            3 &amp; \quad ; 0.35&lt;u&lt;0.6 \\
+            4 &amp; \quad ; 0.6&lt;u&lt;1 \\
+        \end{cases}
+    \end{align*}\]</span>
+<ol type="1">
+<li><p>عدد تصادفی <span class="math inline">\(u\)</span> را از توزیع <span class="math inline">\(\mathcal{U}(0,1)\)</span> تولید می‌کنیم</p></li>
+<li><p>اگر <span class="math inline">\(u&lt;0.2\)</span> عدد تصادفی تولیدی <span class="math inline">\(x^{*}=1\)</span> خواهد بود، در غیر این صورت به گام بعد می‌رویم.</p></li>
+<li><p>اگر <span class="math inline">\(0.2&lt;u&lt;0.35\)</span> آن‌گاه <span class="math inline">\(x^{*}=2\)</span> خواهد بود، در غیر این صورت به گام بعد می‌رویم.</p></li>
+<li><p>اگر <span class="math inline">\(0.35&lt;u&lt;0.6\)</span> آن‌گاه <span class="math inline">\(x^{*}=3\)</span> خواهد بود، در غیر اینصورت به گام بعد می‌رویم.</p></li>
+<li><p>اگر <span class="math inline">\(0.6&lt;u&lt;1\)</span> آن‌گاه <span class="math inline">\(x^{*}=4\)</span> خواهد بود</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>u <span class="ot">=</span> <span class="fu">runif</span>(<span class="dv">1</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(u <span class="sc">&lt;</span> <span class="fl">0.2</span>){</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">=</span> <span class="dv">1</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(u <span class="sc">&lt;</span> <span class="fl">0.35</span>){</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">=</span> <span class="dv">2</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(u <span class="sc">&lt;</span> <span class="fl">0.6</span>){</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">=</span> <span class="dv">3</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span>{</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">=</span> <span class="dv">4</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<p><span style="color: blue;"><strong>تمرین 5:</strong></span> با استفاده از نرم‌افزار <code>R</code>، برنامه‌ای بنویسید که از الگوریتم فوق <code>n</code> داده تولید کند.</p>
+<p><span style="color: green;">مثال 4:</span> فرض کنید <span class="math inline">\(X\)</span> متغیر تصادفی تعداد آزمایش مورد نیاز تا رسیدن به اولین موفقیت باشد. با استفاده از روش وارون الگوریتمی برای تولید داده از توزیع هندسی با پارامتر <span class="math inline">\(p\)</span> ارائه دهید.</p>
+<p><span class="math display">\[\begin{align*}
+        \mathbb{P}(X=x)=pq^{x-1}  \quad ; x=1,2,\ldots \quad ; q=1-p
+    \end{align*}\]</span></p>
+<p>طبق روش بیان شده داریم:</p>
+<p><span class="math display">\[\begin{align*}
+        X^{*}=i \quad \mathrm{if} \quad \sum_{j=1}^{i-1}\mathbb{P}\{X=j\}&lt;u&lt;\sum_{j=1}^{i}\mathbb{P}\{X=j\}
+    \end{align*}\]</span></p>
+<p>از طرفی</p>
+<p><span class="math display">\[\begin{align*}
+        &amp;\sum_{j=1}^{i}\mathbb{P}\{X=j\}=1-\mathbb{P}\{X&gt;i\}=1-q^{i}\\
+        \Rightarrow&amp; X^{*}=i\quad \overset{\mathrm{if}}{\Rightarrow} \quad 1-q^{i-1}&lt;u&lt;1-q^{i}\quad \Rightarrow  q^{i}&lt;1-u&lt;q^{i-1}
+\end{align*}\]</span></p>
+<p>حال با توجه به یکنوا بودن تابع <span class="math inline">\(\log\)</span>، داریم</p>
+<p><span class="math display">\[\begin{align*}
+        &amp;\log(q^{i})&lt;\log(1-u)&lt;\log(q^{i-1})\\  \Rightarrow \quad &amp; i\log(q)&lt;\log(1-u)&lt;(i-1)\log(q)
+\end{align*}\]</span></p>
+<p>چون <span class="math inline">\(\log(q)&lt;0\)</span> پس</p>
+<p><span class="math display">\[\begin{align*}
+        i-1&lt;\dfrac{\log(1-u)}{\log(q)}&lt;i
+\end{align*}\]</span></p>
+<p>و در نهایت</p>
+<p><span class="math display">\[\begin{align*}
+        X^{*}=\Big[\dfrac{\log(1-u)}{\log(q)}\Big]+1
+\end{align*}\]</span></p>
+<p>و چون <span class="math inline">\(1-U\overset{D}{=}U\)</span> پس می‌توان نوشت</p>
+<p><span class="math display">\[\begin{align*}
+        X^{*}=\Big[\dfrac{\log(u)}{\log(q)}\Big]+1
+\end{align*}\]</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">=</span> <span class="fl">0.5</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>u <span class="ot">=</span> <span class="fu">runif</span>(<span class="dv">1</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">floor</span>(<span class="fu">log</span>(u)<span class="sc">/</span><span class="fu">log</span>(<span class="dv">1</span><span class="sc">-</span>p))<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+<p><span style="color: blue;"><strong>تمرین 6:</strong></span> با استفاده از نرم‌افزار <code>R</code>، برنامه‌ای بنویسید که از الگوریتم فوق <code>n</code> داده تولید کند.</p>
+<p><span style="color: blue;"><strong>تمرین 7:</strong></span> فرض کنید <span class="math inline">\(X\)</span> متغیر تصادفی هندسی (مدل تعداد شکست) باشد، الگوریتمی برای شبیه‌سازی از این توزیع بر اساس روش وارون ارائه و آن را در <span class="math inline">\(R\)</span> پیاده‌سازی کنید.</p>
 
 
 </section>
